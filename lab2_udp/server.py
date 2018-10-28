@@ -3,7 +3,7 @@ import socket
 
 def switch(tmp):
     i = 0
-    while i != len(tmp):
+    while i+1 < len(tmp):
         tmp = tmp[:i] + tmp[i+1] + tmp[i] + tmp[i + 2:]
         i = i + 2
     return tmp
