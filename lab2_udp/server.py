@@ -4,7 +4,6 @@ import socket
 def switch(tmp):
     i = 0
     while i != len(tmp):
-        buffer = tmp[i+1]
         tmp = tmp[:i] + tmp[i+1] + tmp[i] + tmp[i + 2:]
         i = i + 2
     return tmp
