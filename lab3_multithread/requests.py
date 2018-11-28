@@ -65,8 +65,7 @@ def form_req_del():
 
 
 def form_req_sort():
-    print("\nsort by: ")
-    print("1. price\n2. transport\n3. time")
+    print("\nMaximal price of tour: ")
     sort = input("input> ")
     request = ('sort', sort)
     request = pickle.dumps(request)

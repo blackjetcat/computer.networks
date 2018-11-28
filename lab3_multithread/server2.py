@@ -1,4 +1,3 @@
-
 import socket as sock
 import pickle as pck
 import _thread as thr
@@ -14,19 +13,11 @@ class Trip:
 
 trips = []          # Данные о рейсах
 clients_arr = []    # Учёт клиентов
-
+data = []
 
 # Утилити функции для обозначения ключа сортировки
 def by_price(trip):
     return trip.price
-
-
-def by_transport(trip):
-    return trip.transport
-
-
-def by_time(trip):
-    return trip.time
 
 
 # Оработка запроса на просмотр
@@ -72,14 +63,22 @@ def delete(n):
     return resp
 
 
+def f(cost):
+    resp = []
+    global data
+    for i in data:
+        if i.price < cost:
+            resp.addpend(i)
+    else:
+        pass
+    resp = pck.dumps(resp)
+
+
 def sort(s):
     global trips
-    if s == '1':
+    global data
+    if by_price < s:
         trips = sorted(trips, key=by_price)
-    elif trips == '2':
-        trips = sorted(trips, key=by_transport)
-    elif trips == '3':
-        trips = sorted(trips, key=by_time)
     resp = 'success'
     resp = pck.dumps(resp)
     return resp
