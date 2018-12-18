@@ -12,5 +12,5 @@ while True:
         client_socket.close()
         break
     client_socket.send(to_send.encode())
-    to_print = client_socket.recv(1024)
+    to_print = client_socket.recv(4096)
     print("Result found:\n ", to_print.decode())

@@ -109,3 +109,9 @@ venv.bak/
 .idea/workspace.xml
 lab4_multiprocessing_tcp/client.py
 lab4_multiprocessing_tcp/server.py
+lab5_mail/SQLite/sqlite3.def
+lab5_mail/SQLite/sqlite3.dll
+lab5_mail/database/server.db
+.idea/sqldialects.xml
+.idea/dataSources.xml
+.idea/dataSources.local.xml
