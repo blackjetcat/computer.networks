@@ -115,3 +115,4 @@ lab5_mail/database/server.db
 .idea/sqldialects.xml
 .idea/dataSources.xml
 .idea/dataSources.local.xml
+.idea/vagrant.xml

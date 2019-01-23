@@ -57,10 +57,10 @@ def add_user(conn, login, password):
         c.execute('''INSERT INTO users VALUES(?, ?, ?)''', (curr_id + 1, login, password))
         c.execute('''SELECT MAX(user_id) FROM users''')
     except:
-        print(pt(), 'Попытка регистрации существующего пользователся')
+        print(pt(), 'Попытка регистрации существующего пользователя')
         return False
     new_id = c.fetchone()[0]
-    print(pt(), 'Уникальный id нового польователя: ', new_id)
+    print(pt(), 'Уникальный id нового пользователя: ', new_id)
     conn.commit()
     return new_id
 
@@ -116,5 +116,5 @@ def del_last(conn, login):
     c = conn.cursor()
     sqltext = 'delete from messages where receiver = ?'
     c.execute(sqltext, (login))
-    print(pt(), 'Последнее псиьмо польователя', login, 'было удалено')
+    print(pt(), 'Последнее письмо польователя', login, 'было удалено')
     conn.commit()
